@@ -82,7 +82,7 @@ def calculates_results_stats(results_dic):
        
         if value[2] == 1:
             results_stats_dic['n_match'] += 1
-            results_stats_dic['n_match'] += 1
+            
             if value[3] == 1:
                 results_stats_dic['n_correct_breed'] += 1
         

@@ -55,7 +55,7 @@ def get_pet_labels(image_dir):
         #  if word.isalpha():
         #   pet_label += word + " "        
         #pet_label = pet_label.strip()
-        pet_label=" ".join({word.strip() for word in words_list_pet if word.isalpha()})
+        pet_label=" ".join([word.strip() for word in words_list_pet if word.isalpha()])
 
 
         if filename not in results_dic:
