@@ -80,10 +80,10 @@ def print_results(results_dic, results_stats_dic, model,
         print("\nINCORRECT Dog/NOT Dog Assignments:")
 
         
-        for key in results_dic:
+        for value in results_dic.values():
 
-            if results_dic[key][3]+results_dic[key][4]==1:
-                 print(" pet label: {}\n classifier label: {}".format(results_dic[key][0], results_dic[key][1]))
+            if value[3]+value[4]==1:
+                 print(" pet label: {}\n classifier label: {}".format(value[0], value[1]))
 
                    
     if (print_incorrect_breed and 
@@ -91,15 +91,10 @@ def print_results(results_dic, results_stats_dic, model,
        ):
         print("\nINCORRECT Dog Breed Assignment:")
 
-        for key in results_dic:
-            if ( sum(results_dic[key][3:]) == 1 and
-                results_dic[key][2] == 0 ):
-                print("Real: {:>26}   Classifier: {:>30}".format(results_dic[key][0],
-                                                          results_dic[key][1]))
-        for key in results_dic:
-            if ( sum(results_dic[key][3:]) == 2 and
-                results_dic[key][2] == 0 ):
-                print("Real: {:>26}   Classifier: {:>30}".format(results_dic[key][0],
-                                                          results_dic[key][1]))
+        for value in results_dic.values():
+            if ( sum(value[3:]) == 2 and
+                value[2] == 0 ):
+                print("Real: {:>26}   Classifier: {:>30}".format(value[0],
+                                                          value[1]))
 
                 

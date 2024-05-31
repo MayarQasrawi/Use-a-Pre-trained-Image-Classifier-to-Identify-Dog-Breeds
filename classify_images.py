@@ -66,13 +66,13 @@ def classify_images(images_dir, results_dic, model):
      Returns:
            None - results_dic is mutable data type so no return needed.         
     """
-    for key in results_dic: 
+    for key,value in results_dic.items(): 
        image_path= path.join(images_dir,key)
 
        model_label = classifier(image_path, model).lower().strip()
-       truth = results_dic[key][0]
+       truth = value[0]
        if truth in model_label:
-        results_dic[key].extend((model_label,1))
+        value.extend((model_label,1))
        else:
-        results_dic[key].extend((model_label,0))
+        value.extend((model_label,0))
      
